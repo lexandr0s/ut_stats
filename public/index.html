@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+	<title>Utopia</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<style type="text/css">
+	.app-chart__canvas {
+	position: relative;
+	max-width: 1080px;
+	margin: 0 auto;
+	}
+	.field {clear:both; text-align:right; line-height:25px;margin-top:3px}
+	label {float:left; padding-right:10px;}
+	.main {width:400px}
+	.form {margin-left:20px;padding-right:10px}
+</style>	
+
+<body>
+	<div class="form">
+		<form name="settings" method="get" onsubmit="GetData();return false">
+			<div class="main">
+				<div class="field">
+					<label for="n">Host:</label>
+					<input type="text" id="host" size="35" value="http://localhost"/>
+				</div>
+				<div class="field">
+					<label for="ln">Port:</label>
+					<input type="text" id="port" size="35" value="20000"/>
+				</div>
+				<div class="field">
+					<label for="a">Token:</label>
+					<input type="text" id="token" size="35" value="FA81A3A46C30FEC331C7D7"/>
+				</div>
+				<div class="field">
+					<label for="a">Count blocks:</label>
+					<input type="text" id="count" size="35" value="50"/>
+				</div>
+			</div>
+			<div>
+				<input type="submit" value="Refresh graph" />
+			</div>
+		</form>
+	</div>
+	
+	<div style="float:left;margin-left:180px;margin-top:-20px" class="wait" ></div>
+	<div class="app-chart__canvas">
+          <canvas class="my_bots"></canvas>
+          <canvas class="all_bots"></canvas>
+    </div>
+	<script src="js/chart.min.js"></script>
+	<script src="js/api.js"></script>
+	
+</body>
+</html>
+
